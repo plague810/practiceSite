@@ -4,7 +4,8 @@ var imgHeight1 = document.querySelector(".background-image").height;
 
 function setImageHeight(imgHeight){
     imgHeight = imgHeight + 'px';
-    sheet1.insertRule("@keyframes fall { to { transform: translateY(imgHeight);}}", 1);
+    console.log(imgHeight);
+    sheet1.insertRule("@keyframes fall { to { transform: translateY(imgHeight);}}", 4);
 }
 
 setImageHeight(imgHeight1);
@@ -13,7 +14,7 @@ setInterval(createSnowflake, 65);
 
 function createSnowflake(){
     var imgHeight2 = document.querySelector(".background-image").height;
-    //console.log(imgHeight);
+    //console.log(imgHeight2);
     const snowflake = document.createElement("i");
     snowflake.classList.add("fas");
     snowflake.classList.add("fa-snowflake");
