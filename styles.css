@@ -34,11 +34,11 @@ html {
 	top: 5%;
 }
 
-@keyframes fall {
+/*@keyframes fall {
     to {
         transform: translateY(132vh);
     }
-}
+}*/
 
 .background-image {
 	width: 100%;
