@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: #c8a34e;
+}
+
+/* Nav Section */
+.navbar{
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+}
+
+.bg-color{
+	background-color:#c8a34e!important
+}
+
+.header-image {
+	margin-top: -2%;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+/* Top Section Image */
+.fa-snowflake {
+    animation: fall linear forwards;
+    color: #fff;
+	position: absolute;
+	z-index: 1;
+	top: 5%;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(132vh);
+    }
+}
+
+.background-image {
+	width: 100%;
+	margin: 0;
+}
+
+.background-container {
+	margin-top: -18%;
+	z-index: 1;
+}
+
+/* Bottom Section Skill Cards */
+.bottom-area {
+	text-align: center;
+	background-color: #c8a34e!important;
+}
+
+.bottom-area > h3 {
+	padding-top: 2%;
+	font-weight: bold;
+}
+
+.card {
+	background-color: cornflowerblue!important;
+	margin: 4%!important;
+}
+
+.row {
+	width: 100%;
+	margin: 0!important;
+}
+
+.card-header {
+	background-color: cornflowerblue!important;
+	font-weight: bold;
+}
+
+.card-footer {
+	background-color: cornflowerblue!important;
+}
+
+.stars {
+	height: 5%;
+	width: 5%;
+	margin: 2px;
+}
+
+/* Above Footer Section */
+.above-footer {
+	text-align: center;
+	background-color: #c8a34e;
+}
+
+.above-footer > h3 {
+	font-weight: bold;
+	padding-top: 1%;
+	padding-bottom: 15px;
+}
+
+.above-footer > p {
+	margin: 0;
+	padding-bottom: 15px;
+}
+
+/* Footer Section */
+#footer {
+	position: absolute;
+	background-color: gold;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	margin-top: 15px;
+	padding-top: 15px;
+}
