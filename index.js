@@ -24,7 +24,6 @@ function createSnowflake(){
     snowflake.style.fontSize = Math.random() * 10 + 10 +'px';
     if(imgHeight2 != imgHeight1){
         setImageHeight(imgHeight2);
-        location.reload();
         imgHeight1 = imgHeight2;
     }
 
