@@ -1,11 +1,11 @@
 var sheet1 = document.styleSheets[0];
-console.log(sheet1);
+//console.log(sheet1);
 var imgHeight1 = document.querySelector(".background-image").height;
 
 function setImageHeight(imgHeight){
     imgHeight = imgHeight + 'px';
-    console.log(imgHeight);
-    sheet1.insertRule("@keyframes fall { to { transform: translateY(imgHeight);}}", 4);
+    console.log("image height is " + imgHeight);
+    sheet1.insertRule("@keyframes fall { to { transform: translateY(imgHeight);}}", 1);
 }
 
 setImageHeight(imgHeight1);
