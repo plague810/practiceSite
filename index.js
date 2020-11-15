@@ -20,7 +20,7 @@ function createSnowflake(){
     snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
     snowflake.style.opacity = Math.random();
     snowflake.style.fontSize = Math.random() * 10 + 10 +'px';
-    if(imgHeight2 !== imgHeight1){
+    if(imgHeight2 != imgHeight1){
         setImageHeight(imgHeight2);
         imgHeight1 = imgHeight2;
     }
