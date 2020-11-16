@@ -1,3 +1,7 @@
+:root {
+	--image-height: 132vh;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -31,14 +35,14 @@ html {
     color: #fff;
 	position: absolute;
 	z-index: 1;
-	top: 5%;
+	top: 1%;
 }
 
-/*@keyframes fall {
+@keyframes fall {
     to {
-        transform: translateY(132vh);
+        transform: translateY(var(--image-height));
     }
-}*/
+}
 
 .background-image {
 	width: 100%;
