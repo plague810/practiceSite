@@ -4,14 +4,14 @@ var navbarOpened = false;
 var imgHeight1 = document.querySelector(".background-image").height;
 
 if(navbarOpened){
-    imgHeight1 = imgHeight1 + 160;
+    imgHeight1 = imgHeight1 + 120;
     setImageHeight(imgHeight1);
 } else {
     setImageHeight(imgHeight1);
 }
 
 function setImageHeight(imgHeight){
-    if(window.innerWidth < 1400){
+    if(window.innerWidth < 1000){
         imgHeight = imgHeight + 20;
     }
     imgHeight = imgHeight + 'px';
@@ -32,8 +32,8 @@ setInterval(createSnowflake, 65);
 
 function createSnowflake(){
     var imgHeight2 = document.querySelector(".background-image").height;
-    if (navbarOpened){
-        imgHeight2 = imgHeight2 + 160;
+    if (navbarOpened && window.innerWidth < 1000){
+        imgHeight2 = imgHeight2 + 120;
     }
     //console.log(imgHeight2);
     const snowflake = document.createElement("i");
