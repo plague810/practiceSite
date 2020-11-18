@@ -1,8 +1,14 @@
 //var sheet1 = document.styleSheets[0];
 //console.log(sheet1);
+var navbarOpened = false;
 var imgHeight1 = document.querySelector(".background-image").height;
 
-setImageHeight(imgHeight1);
+if(navbarOpened){
+    imgHeight1 = imgHeight1 + 160;
+    setImageHeight(imgHeight1);
+} else {
+    setImageHeight(imgHeight1);
+}
 
 function setImageHeight(imgHeight){
     if(window.innerWidth < 1400){
@@ -14,10 +20,21 @@ function setImageHeight(imgHeight){
     document.querySelector(':root').style.setProperty('--image-height', imgHeight)
 }
 
+document.querySelector(".navbar-toggler-icon").addEventListener("click", function(){
+    if(navbarOpened){
+        navbarOpened = false;
+    } else {
+        navbarOpened = true;
+    }
+})
+
 setInterval(createSnowflake, 65);
 
 function createSnowflake(){
     var imgHeight2 = document.querySelector(".background-image").height;
+    if (navbarOpened){
+        imgHeight2 = imgHeight2 + 160;
+    }
     //console.log(imgHeight2);
     const snowflake = document.createElement("i");
     snowflake.classList.add("fas");
