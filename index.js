@@ -1,7 +1,9 @@
+//grab a stylesheet in the html document in javascript
 //var sheet1 = document.styleSheets[0];
-//console.log(sheet1);
+
 var navbarOpened = false;
-var imgHeight1 = document.querySelector(".background-image").height;
+var imgHeight1 = $(".background-image").height();
+var imgYPosition1 = Math.floor(window.scrollY + document.querySelector('.background-image').getBoundingClientRect().top);
 
 if(navbarOpened){
     imgHeight1 = imgHeight1 + 120;
@@ -15,42 +17,70 @@ function setImageHeight(imgHeight){
         imgHeight = imgHeight + 20;
     }
     imgHeight = imgHeight + 'px';
-    //console.log("image height is " + imgHeight);
+
+    //insert a rule to css document in javascript
     //sheet1.insertRule("@keyframes fall { to { transform: translateY("+ imgHeight +");}}", 1);
-    document.querySelector(':root').style.setProperty('--image-height', imgHeight)
+
+    $(':root').css('--image-height', imgHeight);
 }
 
-document.querySelector(".navbar-toggler-icon").addEventListener("click", function(){
-    if(navbarOpened){
-        navbarOpened = false;
-    } else {
-        navbarOpened = true;
-    }
+//having problems with first two conditions
+$(".navbar-toggler-icon").click(function(){
+    
+    setTimeout(function(){
+        //get location of images y position from top of page in javascript
+        var imgYPosition2 = Math.floor(window.scrollY + document.querySelector('.background-image').getBoundingClientRect().top);
+        console.log(imgYPosition1);
+        console.log(imgYPosition2);
+        if(navbarOpened && imgYPosition1 != imgYPosition2){
+            navbarOpened = !navbarOpened;
+            
+            console.log("first condition true");
+            console.log(navbarOpened);
+        } else if (!navbarOpened && imgYPosition1 != imgYPosition2){
+            navbarOpened = !navbarOpened;
+            
+            console.log("second condition true");
+            console.log(navbarOpened);
+        } else if (navbarOpened && imgYPosition1 == imgYPosition2){
+            navbarOpened = !navbarOpened;
+            
+            console.log("third condition true");
+            console.log(navbarOpened);
+        } else if (!navbarOpened && imgYPosition1 == imgYPosition2){
+            navbarOpened = navbarOpened;
+            
+            console.log("fourth condition true");
+            console.log(navbarOpened);
+        }
+    }, 200);
 })
 
 setInterval(createSnowflake, 65);
 
 function createSnowflake(){
-    var imgHeight2 = document.querySelector(".background-image").height;
-    if (navbarOpened && window.innerWidth < 1000){
+    var imgHeight2 = $(".background-image").height();
+    
+    if (navbarOpened && window.innerWidth < 993){
         imgHeight2 = imgHeight2 + 120;
     }
-    //console.log(imgHeight2);
+
     const snowflake = document.createElement("i");
-    snowflake.classList.add("fas");
-    snowflake.classList.add("fa-snowflake");
-    snowflake.style.left = Math.random() * window.innerWidth - 40 + 'px';
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-    snowflake.style.opacity = Math.random();
-    snowflake.style.fontSize = Math.random() * 10 + 10 +'px';
+    $(snowflake).addClass("fas");
+    $(snowflake).addClass("fa-snowflake");
+    $(snowflake).css('left', Math.random() * window.innerWidth - 40 + 'px');
+    $(snowflake).css('animationDuration', Math.random() * 3 + 2 + 's');
+    $(snowflake).css('opacity', Math.random());
+    $(snowflake).css('fontSize', Math.random() * 10 + 10 +'px');
+
     if(imgHeight2 !== imgHeight1){
         setImageHeight(imgHeight2);
         imgHeight1 = imgHeight2;
     }
 
-    document.body.appendChild(snowflake);
+    $('body').append(snowflake);
     
     setTimeout(() => {
-        snowflake.remove();
+        $(snowflake).remove();
     }, 5000)
 }
